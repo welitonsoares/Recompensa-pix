@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#137a4b">
+  <meta name="description" content="Protótipo do Recompensa Pix: jogos, carteira demonstrativa e indicações.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <title>Recompensa Pix</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">R$</div>
+    <div><strong>Recompensa Pix</strong><small>Jogue • Aprenda • Recompensas</small></div>
+    <span class="demo-tag">DEMO</span>
+  </header>
+  <main>
+    <section class="balance">
+      <p class="eyebrow">PONTOS DE DEMONSTRAÇÃO</p>
+      <h1><span id="points">0</span> pontos</h1>
+      <p>Não são dinheiro e não podem ser sacados.</p>
+    </section>
+    <section class="notice">
+      <strong>🔒 Transparência em primeiro lugar</strong>
+      <p>Este protótipo não paga dinheiro. Não há anúncios conectados, pagamentos ou programa de indicação real. Nunca pague taxa antecipada para liberar saque.</p>
+    </section>
+    <nav class="tabs" aria-label="Seções">
+      <button class="tab active" data-page="home">⌂ Início</button>
+      <button class="tab" data-page="games">🎮 Jogos</button>
+      <button class="tab" data-page="videos">▶ Vídeos</button>
+      <button class="tab" data-page="referrals">👥 Indicações</button>
+      <button class="tab" data-page="wallet">▣ Carteira</button>
+    </nav>
+    <section id="home" class="page active">
+      <h2>Bem-vindo!</h2>
+      <p class="muted">Escolha uma área para testar.</p>
+      <button class="feature" data-go="games"><span class="feature-icon">🎯</span><span><strong>Quiz de conhecimentos</strong><small>Responda perguntas e some pontos demonstrativos.</small></span><b>›</b></button>
+      <button class="feature" data-go="videos"><span class="feature-icon">▶️</span><span><strong>Vídeos patrocinados</strong><small>Área preparada para futura integração autorizada.</small></span><b>›</b></button>
+      <button class="feature" data-go="referrals"><span class="feature-icon">👥</span><span><strong>Indique o aplicativo</strong><small>Veja como funcionaria o programa de indicação.</small></span><b>›</b></button>
+      <button class="feature" data-go="wallet"><span class="feature-icon">💳</span><span><strong>Carteira</strong><small>Consulte o saldo demonstrativo e o status do Pix.</small></span><b>›</b></button>
+    </section>
+    <section id="games" class="page">
+      <h2>Quiz rápido</h2><p class="muted">Cada resposta correta vale 10 pontos de demonstração.</p>
+      <div class="panel" id="quiz-panel">
+        <p class="eyebrow" id="question-count">PERGUNTA 1 DE 3</p><h3 id="question">Qual é a capital do Brasil?</h3>
+        <div id="answers" class="answers"></div><p id="quiz-feedback" role="status" class="feedback"></p>
+      </div>
+      <button id="restart-quiz" class="secondary hidden">Jogar novamente</button>
+      <p class="muted tiny">Os pontos servem apenas para testar a interface. Não têm valor monetário.</p>
+    </section>
+    <section id="videos" class="page">
+      <h2>Vídeos patrocinados</h2>
+      <div class="panel center"><div class="big-icon">▶️</div><h3>Nenhuma campanha conectada</h3>
+        <p>Esta versão não exibe anúncios pagos nem gera receita. As regras de cada rede precisam permitir o formato de recompensa antes da integração.</p>
+        <button id="video-status" class="secondary">Ver status</button><p id="video-feedback" class="feedback" role="status"></p>
+      </div>
+    </section>
+    <section id="referrals" class="page">
+      <h2>Indique o Recompensa Pix</h2>
+      <p class="muted">Área de demonstração do programa de indicações.</p>
+      <div class="panel">
+        <p class="eyebrow">SEU CÓDIGO DEMONSTRATIVO</p>
+        <div class="ref-code" id="ref-code">RP-DEMO-2026</div>
+        <button id="copy-ref" class="secondary">Copiar código</button>
+        <button id="share-ref" class="primary">Compartilhar convite</button>
+        <p id="ref-feedback" class="feedback" role="status"></p>
+      </div>
+      <div class="panel">
+        <h3>Como uma indicação real funcionaria</h3>
+        <ul>
+          <li>A pessoa se cadastra voluntariamente pelo seu link.</li>
+          <li>O servidor confirma que é uma conta nova e legítima; instalações sozinhas não contam como comissão.</li>
+          <li>Uma comissão só pode ser aprovada se houver uma campanha financiada por receita real, com regras e limites publicados.</li>
+          <li>O saldo e o pagamento só aparecem após validação e registro no servidor.</li>
+        </ul>
+      </div>
+      <div class="notice">
+        <strong>Comissão atual: R$ 0,00</strong>
+        <p>O programa ainda não está ativo. R$ 100 por pessoa não é uma promessa: só poderia ser oferecido se um parceiro financiar esse valor e as regras aplicáveis permitirem. Não há pagamento por instalação ou cadastro nesta demonstração.</p>
+      </div>
+    </section>
+    <section id="wallet" class="page">
+      <h2>Sua carteira</h2>
+      <div class="panel"><p class="muted">SALDO DISPONÍVEL PARA SAQUE</p><h2 class="money">R$ 0,00</h2>
+        <span class="status">Pix não habilitado</span>
+        <p>Não há pagamentos reais nesta versão. Os pontos do quiz não podem ser convertidos em dinheiro.</p>
+        <button id="pix-info" class="primary">Como habilitar o Pix</button>
+      </div>
+      <div class="panel"><h3>Histórico</h3><p class="muted">Nenhuma transação real registrada.</p></div>
+      <div class="panel"><h3>O que falta?</h3><ul><li>Servidor seguro e banco de dados.</li><li>Receita de anunciantes e orçamento de recompensas.</li><li>Provedor de pagamentos com Pix de saída.</li><li>Regras do programa de indicação, antifraude e privacidade.</li></ul></div>
+    </section>
+    <footer>Protótipo demonstrativo • Sem dinheiro real • Versão 0.2</footer>
+  </main>
+  <dialog id="info-dialog"><h3 id="dialog-title">Informação</h3><p id="dialog-text"></p><button id="close-dialog" class="primary">Entendi</button></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
